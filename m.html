@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>ورود به سایت گچ یاقوت</title>
+  <style>
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #b71c1c, #880e4f);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+    input[type="password"] {
+      padding: 15px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      border: none;
+      width: 250px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    button {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background-color: #ffd54f;
+      border: none;
+      border-radius: 8px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ffca28;
+    }
+    .error {
+      color: #ff5252;
+      margin-top: 10px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>لطفا رمز عبور را وارد کنید</h1>
+<input type="password" id="passwordInput" placeholder="رمز عبور" />
+<button onclick="checkPassword()">ورود</button>
+<div class="error" id="errorMsg"></div>
+
+<script>
+  const correctPassword = "Yaghoot2025"; // رمز عبور شما اینه، می‌تونید تغییرش بدید
+
+  function checkPassword() {
+    const input = document.getElementById('passwordInput').value;
+    const errorMsg = document.getElementById('errorMsg');
+
+    if(input === correctPassword) {
+      window.location.href = 'site.html'; // اگر رمز درست بود، میره به سایت اصلی
+    } else {
+      errorMsg.textContent = 'رمز عبور اشتباه است!';
+    }
+  }
+
+  // برای اینکه کاربر با Enter هم بتونه ورود کنه
+  document.getElementById('passwordInput').addEventListener('keyup', function(e){
+    if(e.key === 'Enter') {
+      checkPassword();
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شرکت گچ یاقوت</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #ffffff, #f5f5f5);
+      color: #333;
+      line-height: 1.8;
+      overflow-x: hidden;
+      animation: fadeInBody 1.5s ease;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background: linear-gradient(to right, #8b0000, #b22222);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      animation: slideInHeader 1.5s ease-in-out;
+    }
+
+    @keyframes slideInHeader {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 80px;
+    }
+
+    nav {
+      background-color: #8b0000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeSlideIn 1s ease;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+
+    .language-selector {
+      background-color: white;
+      border-radius: 5px;
+      padding: 5px;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      animation: fadeSlideIn 1s ease-in-out;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #b22222;
+      border-bottom: 4px solid #b22222;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    ul li {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      padding-right: 25px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "✔️";
+      position: absolute;
+      right: 0;
+      font-size: 1.2rem;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-top: 15px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    form input:focus, form select:focus, form textarea:focus {
+      border-color: #b22222;
+      outline: none;
+    }
+
+    button {
+      background-color: #b22222;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #8b0000;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #8b0000;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeSlideIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://cdn-icons-png.flaticon.com/512/7641/7641727.png" class="logo" alt="لوگوی یاقوت">
+  <h1>شرکت گچ یاقوت 🏗️</h1>
+  <p>تولیدکننده گچ ساختمانی با کیفیت در افغانستان</p>
+</header>
+
+<nav>
+  <div class="nav-links">
+    <a href="#about">درباره ما</a>
+    <a href="#products">محصولات</a>
+    <a href="#order">سفارش</a>
+    <a href="#contact">تماس با ما</a>
+  </div>
+  <select class="language-selector">
+    <option value="fa">فارسی</option>
+    <option value="ps">پشتو</option>
+    <option value="en">English</option>
+  </select>
+</nav>
+
+<section class="section" id="about">
+  <div class="container">
+    <h2>درباره شرکت</h2>
+    <p>شرکت گچ یاقوت در <strong>مزار شریف، دشت شادیان</strong> با بیش از ۱۰ سال تجربه، تولیدکنندهٔ انواع گچ ساختمانی شامل گچ سفید، گچ زیرکار، و ملات‌های آماده می‌باشد.</p>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="container">
+    <h2>محصولات ما</h2>
+    <ul>
+      <li>گچ سفید نرم – برای پرداخت نهایی دیوارها و سقف</li>
+      <li>گچ صنعتی – برای زیرسازی، بتن‌ریزی و کارهای ساختمانی</li>
+      <li>گچ ضد رطوبت – مناسب برای مناطق مرطوب</li>
+      <li>ملات آماده گچی – صرفه‌جویی در زمان اجرا</li>
+      <li>گچ با افزودنی‌های مخصوص برای مقاومت بیشتر</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="order">
+  <div class="container">
+    <h2>فرم سفارش</h2>
+    <form onsubmit="sendOrder(event)">
+      <input type="text" name="name" placeholder="نام شما" required>
+      <input type="tel" name="phone" placeholder="شماره تماس" required>
+      <select name="product" required>
+        <option value="">-- انتخاب محصول --</option>
+        <option value="گچ سفید نرم">گچ سفید نرم</option>
+        <option value="گچ صنعتی">گچ صنعتی</option>
+        <option value="گچ ضد رطوبت">گچ ضد رطوبت</option>
+        <option value="ملات آماده">ملات آماده</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="توضیحات سفارش (اختیاری)"></textarea>
+      <button type="submit">ارسال سفارش از طریق تلگرام</button>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container contact-numbers">
+    <h2>تماس با ما</h2>
+    <ul>
+      <li>📱 <strong>+93786299924</strong> (واتساپ، تلگرام، ایمو)</li>
+      <li>📞 <strong>+93799299924</strong></li>
+      <li>📞 <strong>+93777299924</strong> (سفارش مستقیم در تلگرام)</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  کلیه حقوق متعلق به شرکت گچ یاقوت می‌باشد.
+</footer>
+
+<script>
+  function sendOrder(event) {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const phone = form.phone.value;
+    const product = form.product.value;
+    const message = form.message.value;
+
+    const text = `سفارش جدید\n\nنام: ${name}\nشماره تماس: ${phone}\nمحصول: ${product}\nتوضیحات: ${message}`;
+    const telegramLink = `https://t.me/share/url?url=&text=${encodeURIComponent(text)}`;
+    window.open(telegramLink, '_blank');
+  }
+</script>
+
+</body>
+</html>
